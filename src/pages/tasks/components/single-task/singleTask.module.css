@@ -1,0 +1,40 @@
+.singleTaskSection {
+    position: relative;
+    padding: 10px 5px 0;
+}
+
+.removingButton {
+    position: absolute;
+    top: 0;
+    right: -12px;
+    border: none;
+    border-radius: 50%;
+    padding: 4px 12px;
+    background-color: rgb(160, 157, 157);
+    color: white;
+    transition: 300ms;
+}
+
+.removingButton:hover {
+    background-color: rgb(182, 180, 180);
+}
+
+.titleContainer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.taskTitle {
+    margin-bottom: 0;
+}
+
+.statusDiv {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.statusIcon {
+    cursor: pointer;
+}

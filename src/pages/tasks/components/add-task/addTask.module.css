@@ -1,0 +1,27 @@
+.newTaskDiv {
+    margin-bottom: 30px;
+}
+
+.newTaskButtonDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.newTaskButton {
+    margin-block: 20px;
+}
+
+.newTaskInputsDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.taskInput {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.errorMsg {
+    font-size: 0.9rem;
+    color: red;
+}

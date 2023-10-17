@@ -1,0 +1,11 @@
+.taskHeader {
+    text-align: center;
+}
+
+.tasksContainer {
+    margin-top: 40px;
+}
+
+.taskColumn {
+    border: 1px solid gray;
+}
