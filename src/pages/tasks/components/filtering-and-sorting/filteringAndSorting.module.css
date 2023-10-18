@@ -1,0 +1,5 @@
+.sortingDiv {
+    display: flex;
+    gap: 25px;
+    margin-top: 20px;
+}

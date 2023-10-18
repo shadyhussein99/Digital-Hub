@@ -11,8 +11,8 @@ import styles from "./addTask.module.css";
 function AddTask({ setTasks, tasksRef }) {
 
   AddTask.propTypes = {
-    setTasks: PropTypes.func.isRequired,
-    tasksRef: PropTypes.object.isRequired,
+    setTasks: PropTypes.func,
+    tasksRef: PropTypes.object,
   };
 
   const [addTask, setAddTask] = useState(false); // Responsible for displaying the adding task div

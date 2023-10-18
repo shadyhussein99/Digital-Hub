@@ -26,7 +26,8 @@
 }
 
 .taskTitle {
-    margin-bottom: 0;
+    max-width: 80%;
+    word-wrap: break-word;
 }
 
 .statusDiv {
@@ -37,4 +38,9 @@
 
 .statusIcon {
     cursor: pointer;
+}
+
+.taskDescription {
+    max-width: 80%;
+    word-wrap: break-word;
 }

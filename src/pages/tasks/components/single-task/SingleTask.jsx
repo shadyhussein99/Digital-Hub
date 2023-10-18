@@ -1,5 +1,8 @@
+import { useState } from "react";
+
 import PropTypes from "prop-types";
 
+import { Button, Form } from "react-bootstrap";
 import styles from "./singleTask.module.css";
 
 function SingleTask({
@@ -9,16 +12,21 @@ function SingleTask({
   handleDeletingTask,
   handleTaskPending,
   handleTaskCompleted,
+  handleEditingTitle,
+  handleEditingDescription
 }) {
-  
   SingleTask.propTypes = {
-    taskTitle: PropTypes.string.isRequired,
-    taskDescription: PropTypes.string.isRequired,
-    taskCompleted: PropTypes.bool.isRequired,
-    handleDeletingTask: PropTypes.func.isRequired,
-    handleTaskPending: PropTypes.func.isRequired,
-    handleTaskCompleted: PropTypes.func.isRequired,
+    taskTitle: PropTypes.string,
+    taskDescription: PropTypes.string,
+    taskCompleted: PropTypes.bool,
+    handleDeletingTask: PropTypes.func,
+    handleTaskPending: PropTypes.func,
+    handleTaskCompleted: PropTypes.func,
+    handleEditingTitle: PropTypes.func,
+    handleEditingDescription: PropTypes.func,
   };
+
+  const [isEditing, setIsEditing] = useState(false);
 
   // Still need editing the task
 
@@ -30,18 +38,29 @@ function SingleTask({
         </button>
 
         <div className={styles.titleContainer}>
-          <h5
-            className={styles.taskTitle}
-            style={{ textDecoration: taskCompleted && "line-through" }}
-          >
-            {taskTitle}
-          </h5>
+          {isEditing ? (
+            <Form.Control
+              value={taskTitle}
+              onChange={(e) => handleEditingTitle(e)}
+              style={{ width: "fit-content" }}
+            />
+          ) : (
+            <h5
+              className={styles.taskTitle}
+              style={{ textDecoration: taskCompleted && "line-through" }}
+            >
+              {taskTitle}
+            </h5>
+          )}
+
+          {/* colored status */}
           <div
             style={{ backgroundColor: taskCompleted ? "#1d9027" : "#c21414" }}
             className={styles.statusDiv}
-          ></div> {/* colored status */}
-          
-          <span className={styles.statusIcon}> {/* signed status */}
+          ></div>
+
+          {/* signed status */}
+          <span className={styles.statusIcon}>
             {taskCompleted ? (
               <i
                 className="fa-regular fa-circle-xmark"
@@ -56,11 +75,34 @@ function SingleTask({
               />
             )}
           </span>
+
+          {isEditing ? (
+            <Button variant="secondary" style={{ paddingBlock: "0" }} onClick={() => setIsEditing(false)}>
+              Save
+            </Button>
+          ) : (
+            <Button variant="secondary" style={{ paddingBlock: "0" }} onClick={() => setIsEditing(true)}>
+              Edit
+            </Button>
+          )}
         </div>
       </div>
-      <p style={{ textDecoration: taskCompleted && "line-through" }}>
+
+      {isEditing ? (
+        <Form.Control
+        value={taskDescription}
+        onChange={(e) => handleEditingDescription(e)}
+        style={{ width: "fit-content" }}
+      />
+      ) : (
+        <p
+        style={{ textDecoration: taskCompleted && "line-through" }}
+        className={styles.taskDescription}
+      >
         {taskDescription}
       </p>
+      )}
+      
     </section>
   );
 }
