@@ -6,7 +6,7 @@ import styles from "./filteringAndSorting.module.css";
 
 import PropTypes from "prop-types";
 
-function FilteringAndSorting({ tasks, setTasks, tasksRef }) {
+function FilteringAndSorting({ tasks, setTasks, tasksRef, cacheData, setCacheData }) {
   FilteringAndSorting.propTypes = {
     tasks: PropTypes.arrayOf(
       PropTypes.shape({
@@ -17,6 +17,8 @@ function FilteringAndSorting({ tasks, setTasks, tasksRef }) {
     ),
     setTasks: PropTypes.func,
     tasksRef: PropTypes.object,
+    cacheData: PropTypes.bool,
+    setCacheData: PropTypes.func,
   };
 
   const [sortedByNewest, setSortedByNewest] = useState(true);
@@ -36,8 +38,10 @@ function FilteringAndSorting({ tasks, setTasks, tasksRef }) {
   };
 
   const handleClearTasks = () => {
-    tasksRef.current = null
+    tasksRef.current = []
     setTasks([])
+
+    window.localStorage.removeItem("tasks")
   }
 
   const handleSearchingTasks = (e) => {

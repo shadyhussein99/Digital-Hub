@@ -12,9 +12,9 @@ import Pagination from "./components//pagination/Pagination";
 import styles from "./index.module.css"
 
 function Tasks() {
-
-  const tasksRef = useRef([])  // Used to store the whole tasks
-  const [tasks, setTasks] = useState([]);  // Used to display tasks, to handle the user's search
+  const cachedTasks = JSON.parse(window.localStorage.getItem("tasks"))
+  const tasksRef = useRef(cachedTasks || [])  // Used to store the whole tasks
+  const [tasks, setTasks] = useState(cachedTasks || []);  // Used to display tasks, to handle the user's search
 
   const [selectedPage, setSelectedPage] = useState(1);  // The selected page
 
@@ -24,13 +24,21 @@ function Tasks() {
 
   
   // Handles caching
+  // useEffect(() => {
+  //   if (tasks.length > 0) {
+  //     window.localStorage.setItem("tasks", JSON.stringify(tasksRef.current))
+  //   }
+  //   const cachedTasks = JSON.parse(window.localStorage.getItem("tasks"))
+  //   tasksRef.current = cachedTasks
+  //   setTasks(cachedTasks)
+
+  // }, [cacheData]);
+
   useEffect(() => {
     if (tasks.length > 0) {
       window.localStorage.setItem("tasks", JSON.stringify(tasksRef.current))
     }
-    const cachedTasks = JSON.parse(window.localStorage.getItem("tasks"))
-    tasksRef.current = cachedTasks
-    setTasks(cachedTasks)
+    
 
   }, [cacheData]);
 
