@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Tasks from "./pages/tasks/Index";
+
+import Login from "./views/login/Login";
+import Tasks from "./views/tasks/Index";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -14,7 +16,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter>
     <main className="website-main">
       <Routes>
-        <Route path="/" Component={Tasks} />
+        <Route path="/" Component={Login} />
+        <Route path="/tasks" Component={Tasks} />
       </Routes>
       </main>
     </BrowserRouter>

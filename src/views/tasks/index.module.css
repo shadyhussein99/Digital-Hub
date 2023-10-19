@@ -1,5 +1,7 @@
 .tasksMain {
+    background-color: rgb(243, 243, 243);
     margin-bottom: 40px;
+    padding: 20px;
 }
 
 .taskHeader {

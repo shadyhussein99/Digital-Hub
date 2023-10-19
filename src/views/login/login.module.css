@@ -1,0 +1,16 @@
+.loginMain {
+    width: 50%;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
+    transform: translate(50%, 50%);
+}
+
+.inputContainer {
+    margin-block: 20px;
+}
+
+.errorMsg {
+    font-size: 0.9rem;
+    color: red;
+}

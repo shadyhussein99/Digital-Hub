@@ -8,11 +8,13 @@ import { Button, Form } from "react-bootstrap";
 
 import styles from "./addTask.module.css";
 
-function AddTask({ setTasks, tasksRef }) {
+function AddTask({ setTasks, tasksRef, cacheData, setCacheData }) {
 
   AddTask.propTypes = {
     setTasks: PropTypes.func,
     tasksRef: PropTypes.object,
+    cacheData: PropTypes.bool,
+    setCacheData: PropTypes.func,
   };
 
   const [addTask, setAddTask] = useState(false); // Responsible for displaying the adding task div
@@ -27,7 +29,7 @@ function AddTask({ setTasks, tasksRef }) {
 
   const onSubmit = (data) => {
     tasksRef.current = [
-      ...tasksRef.current,
+      ...(tasksRef.current || []),
       {
         taskTitle: data.taskTitle,
         taskDescription: data.taskDescription,
@@ -40,6 +42,8 @@ function AddTask({ setTasks, tasksRef }) {
 
     setValue("taskTitle", null);
     setValue("taskDescription", null);
+
+    setCacheData(!cacheData)
   };
 
   return (
