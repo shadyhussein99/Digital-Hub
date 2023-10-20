@@ -42,7 +42,7 @@ function SingleTask({
             <Form.Control
               value={taskTitle}
               onChange={(e) => handleEditingTitle(e)}
-              style={{ width: "fit-content" }}
+              className="edit_input"
             />
           ) : (
             <h5
@@ -92,7 +92,7 @@ function SingleTask({
         <Form.Control
         value={taskDescription}
         onChange={(e) => handleEditingDescription(e)}
-        style={{ width: "fit-content" }}
+        className="edit_input"
       />
       ) : (
         <p

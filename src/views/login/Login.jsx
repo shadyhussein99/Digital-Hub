@@ -30,6 +30,7 @@ function Login() {
 
   return (
     <main className={styles.loginMain}>
+      <div className={styles.loginContainer}>
         <h3>Login</h3>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <div className={styles.inputContainer}>
@@ -69,6 +70,7 @@ function Login() {
           Login
         </Button>
       </form>
+      </div>
     </main>
   );
 }

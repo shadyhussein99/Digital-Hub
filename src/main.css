@@ -3,6 +3,23 @@
 }
 
 .website-main {
+    position: relative;
+    min-height: 100vh;
     margin-inline: 70px;
-    margin-top: 50px;
+    padding-top: 50px;
+}
+
+
+@media (max-width: 650px) {
+    .website-main {
+        margin-inline: 30px;
+    }
+}
+
+
+
+@media (max-width: 520px) {
+    .website-main {
+        margin-inline: 15px;
+    }
 }

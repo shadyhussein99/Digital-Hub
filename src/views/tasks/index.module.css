@@ -13,5 +13,6 @@
 }
 
 .taskColumn {
-    border: 1px solid gray;
+    border: 2px solid white;
+    border-radius: 25px;
 }

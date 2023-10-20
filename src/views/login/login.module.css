@@ -1,9 +1,19 @@
 .loginMain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.loginContainer {
     width: 50%;
     padding: 30px;
     border-radius: 25px;
-    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
-    transform: translate(50%, 50%);
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2); 
 }
 
 .inputContainer {
@@ -13,4 +23,19 @@
 .errorMsg {
     font-size: 0.9rem;
     color: red;
+}
+
+
+
+@media (max-width: 991px) {
+    .loginContainer {
+        width: 70%;
+    }
+}
+
+
+@media (max-width: 400px) {
+    .loginContainer {
+        width: 90%;
+    }
 }

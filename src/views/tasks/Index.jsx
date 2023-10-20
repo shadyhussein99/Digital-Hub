@@ -24,22 +24,10 @@ function Tasks() {
 
   
   // Handles caching
-  // useEffect(() => {
-  //   if (tasks.length > 0) {
-  //     window.localStorage.setItem("tasks", JSON.stringify(tasksRef.current))
-  //   }
-  //   const cachedTasks = JSON.parse(window.localStorage.getItem("tasks"))
-  //   tasksRef.current = cachedTasks
-  //   setTasks(cachedTasks)
-
-  // }, [cacheData]);
-
   useEffect(() => {
     if (tasks.length > 0) {
       window.localStorage.setItem("tasks", JSON.stringify(tasksRef.current))
     }
-    
-
   }, [cacheData]);
 
 
@@ -106,7 +94,7 @@ function Tasks() {
         <Row className={styles.taskRow}>
           {displayedTasks?.map((task, index) => {
             return (
-              <Col key={index} sm={6} className={styles.taskColumn}>
+              <Col key={index} lg={6} className={styles.taskColumn}>
                 <SingleTask
                   taskTitle={task.taskTitle}
                   taskDescription={task.taskDescription}

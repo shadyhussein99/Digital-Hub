@@ -1,0 +1,24 @@
+.form-control.edit_input {
+    width: fit-content;
+}
+
+
+@media (max-width: 490px) {
+    .form-control.edit_input {
+        width: 150px
+    }
+}
+
+
+@media (max-width: 415px) {
+    .form-control.edit_input {
+        width: 120px
+    }
+}
+
+
+@media (max-width: 365px) {
+    .form-control.edit_input {
+        width: 100px
+    }
+}
