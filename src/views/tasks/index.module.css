@@ -4,6 +4,11 @@
     padding: 20px;
 }
 
+.logoutDiv {
+    display: flex;
+    justify-content: end;
+}
+
 .taskHeader {
     text-align: center;
 }

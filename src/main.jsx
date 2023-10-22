@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import Login from "./views/login/Login";
-import Tasks from "./views/tasks/Index";
+// import Tasks from "./views/tasks/Index";
+import ClientsLayout from "./layouts/ClientsLayout";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -17,7 +18,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <main className="website-main">
       <Routes>
         <Route path="/" Component={Login} />
-        <Route path="/tasks" Component={Tasks} />
+        <Route path="/tasks" Component={ClientsLayout} />
       </Routes>
       </main>
     </BrowserRouter>

@@ -25,6 +25,7 @@ function Login() {
   };
 
   const onSubmit = () => {
+    window.localStorage.setItem("role", "client")
     navigate("/tasks")
   };
 

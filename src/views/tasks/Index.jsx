@@ -1,8 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 
+import { Link } from "react-router-dom";
+
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { Button } from "react-bootstrap";
 
 import AddTask from "./components/add-task/AddTask";
 import FilteringAndSorting from "./components/filtering-and-sorting/FilteringAndSorting";
@@ -82,8 +85,20 @@ function Tasks() {
     setCacheData(!cacheData)
   }
 
+  const handleLogout = () => {
+
+    window.localStorage.removeItem("role")
+  }
+
   return (
     <main className={styles.tasksMain}>
+      
+      <div className={styles.logoutDiv}>
+      <Button variant="success" onClick={handleLogout}>
+        <Link to="/" style={{textDecoration:"none", color:"white"}}>Log Out</Link>
+        </Button>
+      </div>
+
       <h2 className={styles.taskHeader}>Manage your tasks</h2>
 
       <AddTask tasks={tasks} setTasks={setTasks} tasksRef={tasksRef} cacheData={cacheData} setCacheData={setCacheData} />
